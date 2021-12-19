@@ -14,7 +14,6 @@ const getTransacciones = async(req, res) => {
 const getTransaccionesId = async(req, res) => {
     try {
         const { uid } = req.params;
-        console.log(uid);
         
         const transaccion = await Transacciones.findAll({where: { usuarioUid: uid }});
         if(!transaccion) res.status(404).json(`La trasaccion con id ${uid} no existe`);
