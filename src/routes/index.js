@@ -5,7 +5,9 @@ const router = express.Router();
 const usuarioRouter = require("./usuarios");
 const estacionamientoRouter = require("./estacionamientos");
 const transaccionesRouter = require("./transacciones");
-
+const sesionRouter = require("./sesion");
+const saldoRouter = require("./saldo");
+const csvTransaccionesRouter = require("./csvTransacciones");
 
 //Rutas
 
@@ -13,6 +15,7 @@ const transaccionesRouter = require("./transacciones");
 router.use("/agregar-usuario", usuarioRouter);
 router.use("/usuarios", usuarioRouter);
 router.use("/editar-usuario", usuarioRouter);
+router.use("/agregar-saldo", saldoRouter);
 
 //Estacionamientos
 router.use("/estacionamientos", estacionamientoRouter);
@@ -20,6 +23,9 @@ router.use("/estacionamientos", estacionamientoRouter);
 //Transacciones
 router.use("/transacciones", transaccionesRouter);
 router.use("/agregar-transaccion", transaccionesRouter);
+router.use("/csv-transacciones", csvTransaccionesRouter);
 
+//Inicio de sesion
+router.use("/iniciar-sesion", sesionRouter);
 
 module.exports = router;

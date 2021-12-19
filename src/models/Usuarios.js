@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize");
+const { DataTypes, NOW } = require("sequelize");
 
 module.exports = (sequelize) => {
     sequelize.define("usuarios", {
@@ -28,6 +28,17 @@ module.exports = (sequelize) => {
             type: DataTypes.DECIMAL,
             allowNull: false,
             defaultValue: 0
+        },
+        accessToken: {
+            type: DataTypes.STRING
+        },
+        creacion: {
+            type: DataTypes.DATEONLY,
+            defaultValue: DataTypes.NOW
+        },
+        role: {
+            type: DataTypes.STRING,
+            defaultValue: "user"
         }
     })
 };

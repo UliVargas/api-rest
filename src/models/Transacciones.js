@@ -1,3 +1,4 @@
+const { defaults } = require("joi");
 const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
@@ -18,6 +19,10 @@ module.exports = (sequelize) => {
         boleto: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        creacion: {
+            type: DataTypes.DATEONLY,
+            defaultValue: DataTypes.NOW
         }
     })
 };
