@@ -42,14 +42,19 @@ Parametros: uid por params
 
 Modificar usuario
 Metodo: POST
-http://localhost/api/editar-usuario --- requiere autenticacion
-Parametros: uid, correo, contraseña, saldo, nombre, role(admin o user)
+http://localhost/api/editar-usuario:uid --- requiere autenticacion
+Parametros: uid, correo, nombre, role(admin o user)
 //Los parametros no son oobligatorios, con excepcion del uid, los demas parametros se puede modificar por separado.
 
 Abonar saldo
 Metodo: POST
-http://localhost/api/agregar-saldo --- requiere autenticacion
+http://localhost/api/agregar-saldo/:uid --- requiere autenticacion
 Parametros: id de usuario, monto a abonar
+
+Cambiar contraseña
+Metodo: POST
+http://localhost/api/editar-contrasena/:uid --- requiere autenticacion
+Parametros: uid, contraseña
 
 
 //Transacciones
