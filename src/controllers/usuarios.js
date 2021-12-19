@@ -40,15 +40,12 @@ const getUsuarioId = async(req, res) => {
 const putUsuario = async(req, res) => {
     try {
         const { uid } = req.params;
-        const { nombre, telefono, correo, contrasena, role } = req.body;
+        let { nombre, telefono, correo, role } = req.body;
     
         if(!role) {
-            //hasheo la contraseña que me pasan por body antes de guardarla en la base de datos
-            const hash = await bcrypt.hash(contrasena, 10);
-            
             //Actualiza el usuario y la variable obtiene el valor de 1
             const usuarioUpdated = await Usuarios.update({
-                nombre, telefono, correo, contrasena: hash,
+                nombre, telefono, correo
             }, { where: { uid } });
             
             //Si en la variable de edicion se guarda si se actualizó el usuario, busca y encuentra los nuevos datos y los retorna. Caso contrario, regresa un mensaje con una respuesta de rechazo. 

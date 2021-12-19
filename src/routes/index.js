@@ -8,6 +8,7 @@ const transaccionesRouter = require("./transacciones");
 const sesionRouter = require("./sesion");
 const saldoRouter = require("./saldo");
 const csvTransaccionesRouter = require("./csvTransacciones");
+const putContrasenaUsuarioRouter = require("./contrasena");
 
 //Rutas
 
@@ -16,6 +17,7 @@ router.use("/agregar-usuario", usuarioRouter);
 router.use("/usuarios", usuarioRouter);
 router.use("/editar-usuario", usuarioRouter);
 router.use("/agregar-saldo", saldoRouter);
+router.use("/editar-contrasena", putContrasenaUsuarioRouter);
 
 //Estacionamientos
 router.use("/estacionamientos", estacionamientoRouter);

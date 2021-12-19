@@ -11,7 +11,6 @@ const schemaPostUsuario = Joi.object({
 const schemaPutUsuario = Joi.object({
     nombre: Joi.string(),
     correo: Joi.string().email(),
-    contrasena: Joi.string(),
     telefono: Joi.number(),
     role: Joi.string()
 })
@@ -25,9 +24,15 @@ const schemaTransacciones = Joi.object({
     fechaInicial: Joi.string().required(),
 })
 
+const schemaContrasena = Joi.object({
+    contrasena: Joi.string().min(5).required(),
+    uid: Joi.string().required()
+})
+
 module.exports = {
     schemaPostUsuario,
     schemaPostSaldoUsuario,
     schemaTransacciones,
-    schemaPutUsuario
+    schemaPutUsuario,
+    schemaContrasena
 };
