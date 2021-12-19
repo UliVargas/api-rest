@@ -21,7 +21,7 @@ Forkea el repositorio o descarga el zip, una vez abierta la carpeta de el proyec
 
 La base de datos está hecha con postgreSQL en conjunto con SequelizeORM.
 
-Agregar en la raiz del proyecto un archivo .env con las siguientes variables de entorno: DB_USER, DB_PASSWORD, DB_HOST, DB_NAME
+Agregar en la raiz del proyecto un archivo .env con las siguientes variables de entorno: DB_USER, DB_PASSWORD, DB_HOST, DB_NAME y SECRETWORD para la autenticacion con jwt
 
 Una vez instalado y configurado todo, necesitas ejecutar en tu consola o terminal npm run dev
 ```
