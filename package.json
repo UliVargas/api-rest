@@ -21,6 +21,7 @@
     "json2csv": "^5.0.6",
     "jsonwebtoken": "^8.5.1",
     "node-cron": "^3.0.0",
+    "nodemon": "^2.0.15",
     "npm": "^8.3.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",

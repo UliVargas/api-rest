@@ -34,14 +34,12 @@ const postTransaccion = async(req, res) => {
         if(estacionamientoStatus.status === 0) {
             if(usuario.saldo >= Number(total)) {
                 const transaccion = await Transacciones.create({
-                    total, boleto, estacionamientoId
+                    total, boleto, estacionamientoId, usuarioUid: uid
                 });
                 const nuevoSaldo = usuario.saldo - total;
-                await usuario.addTransacciones(transaccion);
                 const usuarioUpdated = Usuarios.update({saldo: nuevoSaldo}, {where: { uid }});
-                const transaccionCreated = await Transacciones.findByPk(transaccion.id);
             
-                res.status(202).json(transaccionCreated);
+                res.status(202).json(transaccion);
             } else res.status(404).json("Saldo insuficiente");
         } else res.json({msg: "No se puede pagar en este estacionamiento"});
 } catch (err) {
