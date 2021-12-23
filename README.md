@@ -1,6 +1,6 @@
 # Título del Proyecto
 
-<p>Realizo Api Rest para Parco App como reto en el proceso de selección</p>
+<p>Api Rest para Parco App como reto en el proceso de selección</p>
 
 ## Comenzando 🚀
 
@@ -8,7 +8,7 @@
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Que cosas necesitas para instalar el software_
 
 ```
 minimo nodejs v14.16 y npm v6.14.11
@@ -87,13 +87,11 @@ Parametros: correo, contraseña
 //Para autenticarse, solo necesitan iniciar sesion
 
 Una vez autenticado, necesitaras el token que se genera y se lanza como respuesta.
-El toquen se pasa como query con el nombre de propieda accesstoken en la ruta que deseas utilizarlo.
+El toquen se pasa por headers, puedes utilizar postman y usar la opcion de auth e ingresar el token generado en el login.
 
 Ejemplo:
 http://localhost/api/transacciones?accesstoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-http://localhost/api/editar-usuario/9e81c9a0-9c41-4534-ad63-2b5eec71eabe?accesstoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-
-El query comienza a partir de el signo de pregunta "?", antes de el signo, se encuentra la ruta o la ruta con el uid.
+http://localhost/api/editar-usuario/9e81c9a0-9c41-4534-ad63-2b5eec71eabe
 ```
 
 
