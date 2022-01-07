@@ -18,13 +18,13 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-const app = require("./src/app");
-const { conn } = require('./src/db');
+const app = require('./src/app')
+const { conn } = require('./src/db')
 
-conn.sync({ force: false})
-    .then(async () => {
-        await app.listen(3001, () => {
-            console.log('Servidor en puerto 3001')
-        })
+conn.sync({ force: false })
+  .then(async () => {
+    await app.listen(3001, () => {
+      console.log('Servidor en puerto 3001')
     })
-    .catch ((e)=>console.log(e.message));
+  })
+  .catch((e) => console.log(e.message))

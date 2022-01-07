@@ -1,33 +1,29 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-//Importaciones Rutas
-const usuarioRouter = require("./usuarios");
-const estacionamientoRouter = require("./estacionamientos");
-const transaccionesRouter = require("./transacciones");
-const sesionRouter = require("./sesion");
-const saldoRouter = require("./saldo");
-const csvTransaccionesRouter = require("./csvTransacciones");
-const putContrasenaUsuarioRouter = require("./contrasena");
+// Importaciones Rutas
+const usuarioRouter = require('./usuarios')
+const estacionamientoRouter = require('./estacionamientos')
+const transaccionesRouter = require('./transacciones')
+const sesionRouter = require('./sesion')
+const csvTransaccionesRouter = require('./csvTransacciones')
 
-//Rutas
+// Rutas
 
-//Usuarios
-router.use("/agregar-usuario", usuarioRouter);
-router.use("/usuarios", usuarioRouter);
-router.use("/editar-usuario", usuarioRouter);
-router.use("/agregar-saldo", saldoRouter);
-router.use("/editar-contrasena", putContrasenaUsuarioRouter);
+// Usuarios
+router.use('/agregar-usuario', usuarioRouter)
+router.use('/usuarios', usuarioRouter)
+router.use('/editar-usuario', usuarioRouter)
 
-//Estacionamientos
-router.use("/estacionamientos", estacionamientoRouter);
+// Estacionamientos
+router.use('/estacionamientos', estacionamientoRouter)
 
-//Transacciones
-router.use("/transacciones", transaccionesRouter);
-router.use("/agregar-transaccion", transaccionesRouter);
-router.use("/csv-transacciones", csvTransaccionesRouter);
+// Transacciones
+router.use('/transacciones', transaccionesRouter)
+router.use('/agregar-transaccion', transaccionesRouter)
+router.use('/csv-transacciones', csvTransaccionesRouter)
 
-//Inicio de sesion
-router.use("/iniciar-sesion", sesionRouter);
+// Inicio de sesion
+router.use('/iniciar-sesion', sesionRouter)
 
-module.exports = router;
+module.exports = router
